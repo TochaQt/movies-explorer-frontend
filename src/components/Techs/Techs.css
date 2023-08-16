@@ -1,0 +1,128 @@
+.techs {
+    width: 1280px;
+    background-color: #272727;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.techs__title {
+    min-width: calc(100% - 140px);
+    color: #FFF;
+    font-family: Inter;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.88px;
+    padding: 0 0 23px 0;
+    border-bottom: 1px solid #DADADA;
+    margin: 100px auto;
+}
+
+.techs__subtitle {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 58px;
+    letter-spacing: -2px; 
+    margin: 0;
+    padding: 0;
+}
+
+.techs__text {
+    max-width: 460px;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+    letter-spacing: -0.56px;
+    margin: 26px 0 0 0;
+    padding: 0;   
+}
+
+.techs__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 90px);
+    gap: 10px;
+    min-width: 690px;
+    margin: 100px 0;
+}
+
+.techs__list-container {
+    width: 90px;
+    height: 60px;
+    background-color: #303030;
+    border-radius: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tecs__list-tech {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.56px;
+}
+
+@media screen and (max-width: 1305px) {
+    .techs {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .techs__list-container {
+        width: 84px;
+        height: 57px;
+    }
+
+    .tecs__list-tech {
+        font-size: 12px;
+    }
+
+    .techs__list {
+        min-width: calc(100% - 120px) ;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .techs__title {
+        min-width: calc(100% - 100px);
+        margin-bottom: 80px;
+    }
+
+    .techs__text {
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (max-width: 380px) {
+    .techs__subtitle {
+        font-size: 30px;
+    }
+
+    .techs__text {
+        font-size: 11px;
+        max-width: calc(100% - 28px);
+    }
+
+    .techs__title {
+        font-size: 18px;
+        min-width: calc(100% - 28px);
+    }
+}
