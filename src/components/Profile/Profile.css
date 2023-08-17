@@ -3,12 +3,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1 0 auto;
 }
 
 .profile__title {
     color: #FFF;
     text-align: center;
-    font-family: Inter;
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
@@ -46,7 +46,6 @@
 
 .profile__form-hint {
     color: #FFF;
-    font-family: Inter;
     font-size: 11px;
     font-style: normal;
     font-weight: 500;
@@ -56,7 +55,6 @@
 .profile__form-input {
     color: #FFF;
     text-align: right;
-    font-family: Inter;
     font-size: 11px;
     font-style: normal;
     font-weight: 400;
@@ -67,6 +65,10 @@
     padding: 0;
 }
 
+.profile__form-input:focus {
+    outline: 1px solid rgba(255, 255, 255, 0.5);
+}
+
 .profile__form-input::placeholder {
     color: #FFF;
 }
@@ -74,7 +76,6 @@
 .profile__form-submit {
     color: #FFF;
     text-align: center;
-    font-family: Inter;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
@@ -96,7 +97,6 @@
     margin: 16px 0 0 0;
     padding: 0;
     text-align: center;
-    font-family: Inter;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;

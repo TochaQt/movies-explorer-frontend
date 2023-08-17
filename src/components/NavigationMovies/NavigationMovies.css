@@ -3,7 +3,7 @@
     flex-direction: row;
 }
 
-.burger__container {
+.navigationmovies__burger-container {
     width: 100%;
 }
 
@@ -62,7 +62,7 @@
     display: none;
 }
 
-.burger__button {
+.navigationmovies__burger-button {
     display: none;
 }
 
@@ -86,7 +86,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .link_active{
+    .navigationmovies__link_active{
         border-bottom: 2px solid #fff;
     }
     .navigationmovies__main {
@@ -108,7 +108,7 @@
         grid-template-columns: auto;
     }
 
-    .burger__button {
+    .navigationmovies__burger-button {
         display: block;
         position: absolute;
         width: 28px;
@@ -119,12 +119,12 @@
         cursor: pointer;
     }
 
-    .burger__button:hover{
+    .navigationmovies__burger-button:hover{
         opacity: .8;
     }
 
-    .burger__button::after,
-    .burger__button::before {
+    .navigationmovies__burger-button::after,
+    .navigationmovies__burger-button::before {
         content: '';
         background-color: #fff;
         height: 3px;
@@ -134,28 +134,28 @@
         opacity: 1;
     }
 
-    .burger__button::before {
+    .navigationmovies__burger-button::before {
         top: 0;
     }
 
-    .burger__button.active::before {
+    .navigationmovies__burger-button.active::before {
         transform: rotate(45deg) translateY(-5px) translateX(19px);
         width: 22px;
     }
 
-    .burger__button.active::after {
+    .navigationmovies__burger-button.active::after {
         transform: rotate(-45deg) translateY(5px) translateX(19px);
         width: 22px;
     }
-    .burger__button.active span{
+    .navigationmovies__burger-button.active span{
         transform: scale(0);
     }
 
-    .burger__button::after {
+    .navigationmovies__burger-button::after {
         bottom: 0;
     }
 
-    .burger__button span {
+    .navigationmovies__burger-button span {
         background-color: #fff;
         position: absolute;
         height: 3px;
@@ -164,7 +164,7 @@
         transition: 1s;
     }
 
-    .burger__container {
+    .navigationmovies__burger-container {
         max-width: 520px;
         z-index: 3;
         background: rgba(32, 32, 32, 1);
@@ -176,7 +176,7 @@
         transition: 1s;
     }
 
-    .burger__container_active {
+    .navigationmovies__burger-container_active {
         height: 100%;
         overflow: auto;
         position: fixed;
@@ -208,29 +208,29 @@
     }
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
-    .burger__button{
+    .navigationmovies__burger-button{
         width: 22px;
         height: 22px;
         top: 26px;
         right: 23px;
     }
-    .burger__button::before,
-    .burger__button::after{
+    .navigationmovies__burger-button::before,
+    .navigationmovies__burger__button::after{
         height: 2.5px;
     }
-    .burger__button::before{
+    .navigationmovies__burger-button::before{
         top: 1px;
     }
-    .burger__button.active::before {
+    .navigationmovies__burger-button.active::before {
         transform: rotate(45deg) translateY(-3px) translateX(4px);
         width: 22px;
     }
 
-    .burger__button.active::after {
+    .navigationmovies__burger-button.active::after {
         transform: rotate(-45deg) translateY(-9px) translateX(16px);
         width: 22px;
     }
-    .burger__button.active span{
+    .navigationmovies__burger-button.active span{
         transform: scale(0);
     }
 }

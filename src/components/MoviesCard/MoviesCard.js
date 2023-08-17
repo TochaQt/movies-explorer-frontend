@@ -15,7 +15,7 @@ function MoviesCard(props) {
 
     return (
         <div className="moviescard" onClick={handleLikeClick}>
-            <img src={props.movieImg} className="moviescard__img"></img>
+            <img src={props.movieImg} alt={`Обложка "${props.movieName}"`} className="moviescard__img"></img>
             <div className="moviescard__info">
                 <p className="moviescard__name">{props.movieName}</p>
                 <p className="moviescard__duration">{props.movieDuration}</p>

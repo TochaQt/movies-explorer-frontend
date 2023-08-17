@@ -20,7 +20,6 @@
 
 .moviescard__name {
     color: #FFF;
-    font-family: Inter;
     font-size: 13px;
     font-style: normal;
     font-weight: 500;
@@ -32,7 +31,6 @@
 .moviescard__duration {
     color: #8B8B8B;
     text-align: center;
-    font-family: Inter;
     font-size: 11px;
     font-style: normal;
     font-weight: 400;
@@ -52,16 +50,15 @@
     border-radius: 30px;
     color: #FFF;
     text-align: center;
-    font-family: Inter;
     font-size: 10px;
     font-style: normal;
     font-weight: 400;
     line-height: 9px;
     margin: 0;
     padding: 5px 7px 6px 7px;
-    opacity: 0;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    opacity: 0;
 }
 
 .moviescard__save::before {
@@ -89,6 +86,10 @@
 
 .moviescard__save_active::before {
     content: '';
+}
+
+.moviescard__save:hover {
+    background-color: rgba(49, 49, 49, 0.8);
 }
 
 @media screen and (max-width: 900px) {

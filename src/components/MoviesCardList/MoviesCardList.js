@@ -4,23 +4,23 @@ import movieImg from '../../images/color.jpg'
 
 function MoviesCardList() {
     return (
-        <section className="moviescardlist">
-            <div className='moviescardlist__container'>
-            <MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} />
-            <MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} />
-            <MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} />
-            <MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} />
-            <MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} />
-            <MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} />
-            <MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} />
-            <MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} />
-            <MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} />
-            <MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} />
-            <MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} />
-            <MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} />
-            </div>
+        <div className="moviescardlist">
+            <ul className='moviescardlist__container'>
+                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
+                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
+                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
+                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
+                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
+                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
+                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
+                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
+                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
+                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
+                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
+                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
+            </ul>
             <button className='moviescardlist__button'>Еще</button>
-        </section>
+        </div>
     )
 }
 

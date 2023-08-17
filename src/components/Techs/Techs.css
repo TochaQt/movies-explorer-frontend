@@ -11,7 +11,6 @@
 .techs__title {
     min-width: calc(100% - 140px);
     color: #FFF;
-    font-family: Inter;
     font-size: 22px;
     font-style: normal;
     font-weight: 400;
@@ -25,7 +24,6 @@
 .techs__subtitle {
     color: #FFF;
     text-align: center;
-    font-family: Inter;
     font-size: 50px;
     font-style: normal;
     font-weight: 400;
@@ -39,7 +37,6 @@
     max-width: 460px;
     color: #FFF;
     text-align: center;
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -55,6 +52,7 @@
     gap: 10px;
     min-width: 690px;
     margin: 100px 0;
+    padding: 0;
 }
 
 .techs__list-container {
@@ -68,9 +66,8 @@
     align-items: center;
 }
 
-.tecs__list-tech {
+.techs__list-tech {
     color: #FFF;
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -90,7 +87,7 @@
         height: 57px;
     }
 
-    .tecs__list-tech {
+    .techs__list-tech {
         font-size: 12px;
     }
 

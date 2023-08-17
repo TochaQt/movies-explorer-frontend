@@ -19,7 +19,6 @@
 
 .authform__hint {
     color: #8B8B8B;
-    font-family: Inter;
     font-size: 10px;
     font-style: normal;
     font-weight: 400;
@@ -34,7 +33,6 @@
     border-radius: 8px;
     box-shadow: none;
     border: none;
-    font-family: Inter;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
@@ -43,9 +41,12 @@
     margin: 10px 0 0 0;
 }
 
+.authform__input:focus {
+    outline: 1px solid rgba(255, 255, 255, 0.5);
+}
+
 .authform__error {
     color: #EE3465;
-    font-family: Inter;
     font-size: 10px;
     min-height: 12px;
     font-style: normal;
@@ -57,7 +58,6 @@
 
 .authform__title {
     color: #FFF;
-    font-family: Inter;
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
@@ -68,7 +68,6 @@
 
 .authform__link {
     color: #8B8B8B;
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -80,7 +79,6 @@
 
 .authform__link-button {
     color: #4285F4;
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -99,7 +97,6 @@
     width: 100%;
     height: 45px;
     color: #FFF;
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;

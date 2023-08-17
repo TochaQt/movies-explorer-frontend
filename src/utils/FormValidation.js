@@ -39,10 +39,10 @@ export default class FormValidation {
     }
     enableSubmit() {
       this.formSubmit.disabled = false;
-      this.formSubmit.classList.remove('submit_disable');
+      this.formSubmit.classList.remove('authform__submit_disable');
     }
     disableSubmit() {
       this.formSubmit.disabled = true;
-      this.formSubmit.classList.add('submit_disable');
+      this.formSubmit.classList.add('authform__submit_disable');
     }
   }

@@ -5,7 +5,7 @@ import './Login.css';
 
 function Login() {
   return (
-    <section className='login'>
+    <main className='login'>
       <Link to={'/'}><img src={logo} alt='logo' className='login__logo'/></Link>
       <Formauth
         linkText='Ещё не зарегистрированы?'
@@ -15,7 +15,7 @@ function Login() {
         formName='login'
         formTitle='Рады видеть!'
       ></Formauth>
-    </section>
+    </main>
   );
 }
 

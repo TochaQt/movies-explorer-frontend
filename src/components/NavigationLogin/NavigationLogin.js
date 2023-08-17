@@ -5,11 +5,11 @@ import logo from '../../images/logo.svg';
 function NavigationLogin() {
     return (
         <nav className="navigationlogin">
-            <Link to={'/'}><img src={logo} alt='logo' className='navigationlogin__logo'/></Link>
-            <div className='navigationlogin__container'>
+            <Link to={'/'}><img src={logo} alt='Логотип' className='navigationlogin__logo'/></Link>
+            <nav className='navigationlogin__container'>
                 <Link to='/signup' className='navigationlogin__register'>Регистрация</Link>
                 <Link to='/signin' className='navigationlogin__signin'>Войти</Link>`
-            </div>
+            </nav>
         </nav>
     )
 }
