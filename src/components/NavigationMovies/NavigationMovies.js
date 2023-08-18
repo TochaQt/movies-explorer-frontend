@@ -9,16 +9,16 @@ function NavigationMovies() {
     document
       .querySelector('.navigationmovies__burger-container')
       .classList.toggle('navigationmovies__burger-container_active');
-    document.querySelector('.navigationmovies__burger-button').classList.toggle('active');
+    document.querySelector('.navigationmovies__burger-button').classList.toggle('navigationmovies__burger-button_active');
   }
 
   return (
     <div className='navigationmovies'>
       <Link to={'/'}><img src={logo} alt='Логотип' className='navigationmovies__logo'/></Link>
     <div className='navigationmovies__burger-container'>
-      <div className='navigationmovies__burger-button' onClick={openBurger}>
+      <button type='button' className='navigationmovies__burger-button' onClick={openBurger}>
         <span></span>
-      </div>
+      </button>
       <nav className='navigationmovies__main'>
         <ul className='navigationmovies__container'>
           <li className='navigationmovies__item'>

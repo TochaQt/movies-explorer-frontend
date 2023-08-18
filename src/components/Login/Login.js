@@ -6,15 +6,17 @@ import './Login.css';
 function Login() {
   return (
     <main className='login'>
-      <Link to={'/'}><img src={logo} alt='logo' className='login__logo'/></Link>
-      <Formauth
-        linkText='Ещё не зарегистрированы?'
-        buttonText='Регистрация'
-        url='/signup'
-        submitText='Войти'
-        formName='login'
-        formTitle='Рады видеть!'
-      ></Formauth>
+      <section className='login__section'>
+        <Link to={'/'}><img src={logo} alt='Логотип' className='login__logo'/></Link>
+        <Formauth
+          linkText='Ещё не зарегистрированы?'
+          buttonText='Регистрация'
+          url='/signup'
+          submitText='Войти'
+          formName='login'
+          formTitle='Рады видеть!'
+        ></Formauth>
+      </section>
     </main>
   );
 }

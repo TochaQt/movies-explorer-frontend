@@ -50,7 +50,7 @@
 
 .navigationmovies__link_account {
     background-color: #313131;
-    padding: 8px 20px;
+    padding: 8px 25px;
     border-radius: 20px;
 }
 
@@ -81,7 +81,7 @@
     height: 100%;
     align-items: center;
     justify-items: end;
-    grid-template-columns: 0px minmax(106px, 1000px) 145px minmax(106px, 1000px);
+    grid-template-columns: 0px minmax(106px, 1000px) 145px minmax(106px, 460px);
     z-index: 3;
 }
 
@@ -117,6 +117,10 @@
         right: 38px;
         transition: opacity 0.3s;
         cursor: pointer;
+        padding: 0;
+        background-color: #202020;
+        border: none;
+        box-sizing: content-box;
     }
 
     .navigationmovies__burger-button:hover{
@@ -138,16 +142,16 @@
         top: 0;
     }
 
-    .navigationmovies__burger-button.active::before {
+    .navigationmovies__burger-button.navigationmovies__burger-button_active::before {
         transform: rotate(45deg) translateY(-5px) translateX(19px);
         width: 22px;
     }
 
-    .navigationmovies__burger-button.active::after {
+    .navigationmovies__burger-button.navigationmovies__burger-button_active::after {
         transform: rotate(-45deg) translateY(5px) translateX(19px);
         width: 22px;
     }
-    .navigationmovies__burger-button.active span{
+    .navigationmovies__burger-button.navigationmovies__burger-button_active span{
         transform: scale(0);
     }
 
@@ -221,16 +225,16 @@
     .navigationmovies__burger-button::before{
         top: 1px;
     }
-    .navigationmovies__burger-button.active::before {
+    .navigationmovies__burger-button.navigationmovies__burger-button_active::before {
         transform: rotate(45deg) translateY(-3px) translateX(4px);
         width: 22px;
     }
 
-    .navigationmovies__burger-button.active::after {
+    .navigationmovies__burger-button.navigationmovies__burger-button_active::after {
         transform: rotate(-45deg) translateY(-9px) translateX(16px);
         width: 22px;
     }
-    .navigationmovies__burger-button.active span{
+    .navigationmovies__burger-button.navigationmovies__burger-button_active span{
         transform: scale(0);
     }
 }

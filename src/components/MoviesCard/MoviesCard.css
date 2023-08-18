@@ -15,7 +15,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 14px;
+    margin-top: 12px;
+    padding: 0 15px;
 }
 
 .moviescard__name {
@@ -101,6 +102,10 @@
 
      .moviescard {
         width: 339px;
+    }
+
+    .moviescard__info {
+        padding: 0;
     }
 }
 

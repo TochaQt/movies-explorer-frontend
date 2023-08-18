@@ -1,7 +1,12 @@
 .nav-tab {
-    margin: 141px auto 20px auto;
+    margin: 135px auto 15px auto;
+}
+
+.nav-tab__ul {
     display: flex;
     flex-direction: row;
+    padding: 0;
+    list-style: none;
 }
 
 .nav-tab__link {
@@ -31,7 +36,7 @@
 
 @media screen and (max-width: 768px) {
     .nav-tab {
-        margin-top: 300px;
+        margin-top: 295px;
     }
 }
 
@@ -49,5 +54,6 @@
 
     .nav-tab {
         margin-top: 200px;
+        margin-bottom: 0;
     }
 }

@@ -18,7 +18,7 @@
     letter-spacing: -0.88px;
     padding: 0 0 23px 0;
     border-bottom: 1px solid #DADADA;
-    margin: 100px auto;
+    margin: 95px auto 90px auto;
 }
 
 .techs__subtitle {
@@ -100,10 +100,19 @@
     .techs__title {
         min-width: calc(100% - 100px);
         margin-bottom: 80px;
+        margin-top: 85px;
     }
 
     .techs__text {
         font-size: 12px;
+        max-width: 400px;
+        line-height: 18px;
+    }
+
+    .techs__list {
+        margin-top: 80px;
+        margin-bottom: 90px;
+        grid-template-columns: repeat(auto-fill, 84px);
     }
 
 }
@@ -115,11 +124,20 @@
 
     .techs__text {
         font-size: 11px;
-        max-width: calc(100% - 28px);
+        max-width: calc(100% - 36px);
+        margin-top: 16px;
     }
 
     .techs__title {
         font-size: 18px;
-        min-width: calc(100% - 28px);
+        min-width: calc(100% - 36px);
+        margin-top: 38px;
+        margin-bottom: 50px;
+    }
+
+    .techs__list {
+        max-width: calc(100% - 100px);
+        margin-top: 45px;
+        justify-content: center;
     }
 }

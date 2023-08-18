@@ -5,6 +5,10 @@
     flex: 1 0 auto;
 }
 
+.login__section {
+    width: 100%;
+}
+
 .login__logo {
     margin: 0 0 40px 0;
     transition: opacity 0.3s;
@@ -12,6 +16,13 @@
 
 .login__logo:hover {
     opacity: .7;
+}
+
+@media screen and (max-width: 768px) {
+    .login {
+        flex: 0 0 auto;
+    }
+
 }
 
 @media screen and (max-width: 460px) {

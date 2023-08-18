@@ -20,7 +20,7 @@ function MoviesCard(props) {
                 <p className="moviescard__name">{props.movieName}</p>
                 <p className="moviescard__duration">{props.movieDuration}</p>
             </div>
-            <button className={`moviescard__save ${active === true ? 'moviescard__save_active' : ''}`}></button>
+            <button type='button' className={`moviescard__save ${active === true ? 'moviescard__save_active' : ''}`}></button>
         </div>
     )
 }

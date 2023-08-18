@@ -3,12 +3,12 @@ import search from '../../images/find-3.svg';
 
 function SearchForm() {
     return (
-        <div className="searchform">
+        <section className="searchform">
             <form className='searchform__form'>
                 <div className='searchform__container'>
                 <input className='searchform__input' required placeholder='Фильм' type='search'></input>
                 <button className='searchform__button' type='submit'>
-                    <img className='searchform__button-icon' src={search} alt='search' />
+                    <img className='searchform__button-icon' src={search} alt='Поиск' />
                 </button>
                 </div>
                 <div className='searchform__checkbox'>
@@ -19,7 +19,7 @@ function SearchForm() {
                     <span className='searchform__checkbox-title'>Короткометражки</span>
                 </div>
             </form>
-        </div>
+        </section>
     )
 }
 
