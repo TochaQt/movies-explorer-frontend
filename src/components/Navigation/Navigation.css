@@ -1,0 +1,27 @@
+.navigation {
+    margin: 0 70px 0 0;
+}
+
+.navigation__register {
+    margin: 0 30px 0 0;
+    padding: 0;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.navigation__signin {
+    margin: 0;
+    padding: 8px 20px;
+    text-decoration: none;
+    color: black;
+    background-color: #3DDC84;
+    border-radius: 3px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+}

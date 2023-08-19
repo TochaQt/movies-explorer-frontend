@@ -1,0 +1,71 @@
+.navigationlogin {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.navigationlogin__container {
+    display: flex ;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigationlogin__register {
+    margin: 0 30px 0 0;
+    padding: 0;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    transition: opacity 0.3s;
+}
+
+.navigationlogin__register:hover {
+    opacity: .7;
+}
+
+.navigationlogin__signin {
+    margin: 0;
+    padding: 8px 20px;
+    text-decoration: none;
+    color: black;
+    background-color: #3DDC84;
+    border-radius: 3px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    transition: opacity 0.3s;
+}
+
+.navigationlogin__signin:hover {
+    opacity: .8;
+}
+
+.navigationlogin__logo {
+    width: 38px;
+    height: 38px;
+    transition: opacity 0.3s;
+}
+
+.navigationlogin__logo:hover {
+    opacity: .8;
+}
+
+@media screen and (max-width: 620px) {
+    .navigationlogin__register {
+        margin-right: 14px;
+        font-size: 10px;
+    }
+
+    .navigationlogin__signin {
+        font-size: 10px;
+        line-height: 16px;
+        padding: 5px 12px;
+    }
+}
