@@ -4,7 +4,7 @@ import './Preloader.css';
 const Preloader = ({ hidden }) => {
   return (
     <div className={`preloader ${hidden ? 'hidden' : ''}`}>
-      <div className={`preloader__container ${hidden ? 'hidden' : ''}`}>
+      <div className={`preloader__container`}>
         <span className='preloader__round'></span>
       </div>
     </div>
