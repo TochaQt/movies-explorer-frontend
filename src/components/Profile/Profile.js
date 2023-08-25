@@ -55,7 +55,7 @@ function Profile({setLogged, setPreloader}) {
             console.log(err);
             if (err === 409) {
               formError.classList.remove('profile__form-error_ok');
-              formError.textContent = 'Этот Email уже занят';
+              formError.textContent = 'Пользователь с таким email уже существует';
             }
           })
           .finally(() => {

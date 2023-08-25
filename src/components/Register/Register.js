@@ -43,11 +43,11 @@ function Register({setLogged, logged, setPreloader}) {
           })
           .catch((err) => {
             if (err === 400) {
-              formError.textContent = 'Введены некорректные данные';
+              formError.textContent = 'При регистрации пользователя произошла ошибка';
               console.log(123)
             }
             if (err === 409) {
-              formError.textContent = 'Этот Email уже зарегистрирован';
+              formError.textContent = 'Пользователь с таким email уже существует';
               console.log(123)
             }
           })

@@ -26,7 +26,7 @@ function Login({setLogged, logged, setPreloader}) {
       })
       .catch((err) => {
         if (err === 401) {
-          formError.textContent = 'Неверный Email или пароль';
+          formError.textContent = 'Вы ввели неправильный логин или пароль';
         }
       })
       .finally(setPreloader(true));
