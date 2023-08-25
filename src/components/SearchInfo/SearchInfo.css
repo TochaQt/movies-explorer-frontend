@@ -1,0 +1,16 @@
+.search-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-info__title {
+    color: #EE3465;
+    font-size: 20px;
+    min-height: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 100px 0 0 0;
+    padding: 0;
+}
