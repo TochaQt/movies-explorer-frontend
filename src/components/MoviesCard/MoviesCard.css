@@ -125,4 +125,12 @@
     .moviescard__name {
         font-size: 12px;
     }
+
+    .moviescard__save_active_saved {
+        opacity: 1;
+    }
+
+    .moviescard__save {
+        opacity: 1;
+    }
 }

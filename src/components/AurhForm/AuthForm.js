@@ -34,6 +34,7 @@ function AuthForm({
             required 
             placeholder='example@mail.com'
             type='email'
+            pattern='.+@[A-Za-z]*\.[a-z]{2,4}'
             onChange={getValue}
             ></input>
             <span id='email' className='authform__error'></span>

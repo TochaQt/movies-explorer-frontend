@@ -52,11 +52,27 @@ function SavedMovies({logged, setPreloader}) {
       ...searchParams,
       shortSwitcher: !searchParams.shortSwitcher,
     });
+    let filtered = savedMovies.filter(
+      (movie) =>
+        movie.nameRU.toLowerCase().includes(searchParams.key) ||
+        movie.nameEN.toLowerCase().includes(searchParams.key)
+    );
+    if (!searchParams.shortSwitcher) {
+      filtered = filtered.filter(
+        (movie) => movie.duration < 40
+      );
+    }
+    setFiltered(filtered);
   }
   
   function deletefilm (card) {
     setSavedMovies(
       savedMovies.filter(film => {
+        return film._id !== card._id
+      })
+    );
+    setFiltered(
+      filtered.filter(film => {
         return film._id !== card._id
       })
     )

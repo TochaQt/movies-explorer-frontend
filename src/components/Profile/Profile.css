@@ -125,12 +125,22 @@
     cursor: auto;
 }
 
+.profile__form-submit_disabled {
+    color: #424242;
+    cursor: auto;
+    pointer-events: none;
+}
+
 .profile__form-submit:disabled:hover {
     opacity: 1;
 }
 
 .profile__form-submit:hover {
     opacity: 0.7;
+}
+
+.profile__form-submit_disabled:hover {
+    opacity: 1;
 }
 
 .profile__link {

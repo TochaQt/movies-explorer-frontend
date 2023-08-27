@@ -91,7 +91,9 @@ function Profile({setLogged, setPreloader}) {
                             maxLength="40"
                             name='name'
                             onChange={getValue}
-                            value={data.name}>
+                            value={data.name}
+                            required
+                            >
                             </input>
                         </label>
                         <span id='name' className='profile__form-input-error'></span>
@@ -102,14 +104,17 @@ function Profile({setLogged, setPreloader}) {
                             placeholder={user.email} 
                             type='email'
                             name='email'
+                            pattern='.+@[A-Za-z]*\.[a-z]{2,4}'
                             onChange={getValue}
-                            value={data.email}>
+                            value={data.email}
+                            required
+                            >
                             </input>
                         </label>
                         <span id='email' className='profile__form-input-error'></span>
                     </div>
                     <span className='profile__form-error'></span>
-                    <button className='profile__form-submit' type='submit'>Редактировать</button>
+                    <button className={`profile__form-submit ${((data.email === user.email) && (data.name === user.name)) ? `profile__form-submit_disabled` : ``}`} type='submit'>Редактировать</button>
                 </form>
                 <Link to={'/'} className='profile__link' onClick={handleLoguot}>Выйти из аккаунта</Link>
             </section>

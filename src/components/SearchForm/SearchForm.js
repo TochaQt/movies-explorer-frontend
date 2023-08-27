@@ -18,14 +18,14 @@ function SearchForm({ formName, onSubmit, handleShort, handleKey, searchKey }) {
         <section className="searchform">
             <form className='searchform__form' name={formName} onSubmit={onSubmit}>
                 <div className='searchform__container'>
-                <input className='searchform__input' required placeholder='Фильм' type='search' onChange={handleKey} value={searchKey}></input>
+                <input className='searchform__input' placeholder='Фильм' type='search' onChange={handleKey} value={searchKey}></input>
                 <button className='searchform__button' type='submit'>
                     <img className='searchform__button-icon' src={search} alt='Поиск' />
                 </button>
                 </div>
                 <div className='searchform__checkbox'>
                     <label className='checkbox-toggle'>
-                        <input type='checkbox' name='short-films' onClick={handleShort} />
+                        <input type="checkbox" name='short-films' onClick={handleShort} />
                         <span className='slider round'></span>
                     </label>
                     <span className='searchform__checkbox-title'>Короткометражки</span>

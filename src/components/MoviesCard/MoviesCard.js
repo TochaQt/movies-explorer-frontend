@@ -22,6 +22,7 @@ function MoviesCard({film, deletefilm}) {
 
 function handleLikeClick() {
     if (savedMovie) {
+      if (location === '/saved-movies') {
       api
         .deleteMovie(film)
         .then((res) => {
@@ -31,6 +32,25 @@ function handleLikeClick() {
           }
         })
         .catch((err) => console.log(err));
+      }
+      else {
+        const movieToRemove = savedFilms.find((savedMovie) => film.id === savedMovie.movieId)
+        api
+        .deleteMovie(movieToRemove)
+        .then((res) => {
+          if (res) {
+            setSavedMovie(!savedMovie);
+          }
+        })
+        .then(() =>
+        api.getSavedMovies()
+          .then((res) => {
+            localStorage.setItem('savedMovies', JSON.stringify(res));
+            setSavedFilms(res)
+          })
+      )
+        .catch((err) => console.log(err));
+      }
     } else {
       api
         .saveMovie(film)
@@ -39,6 +59,13 @@ function handleLikeClick() {
             setSavedMovie(!savedMovie);
           }
         })
+        .then(() =>
+          api.getSavedMovies()
+            .then((res) => {
+              localStorage.setItem('savedMovies', JSON.stringify(res));
+              setSavedFilms(res)
+            })
+        )
         .catch((err) => console.log(err));
     }
 }

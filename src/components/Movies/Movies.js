@@ -20,22 +20,7 @@ function Movies({setPreloader, logged}) {
   });
 
   useEffect(() => {
-      window.addEventListener('resize', resizeWindow);
-      if (width < 769 && width > 481) {
-        setListView({
-          list: 8,
-          more: 2,
-        });
-      }
-      if (width < 481 && width > 319) {
-        setListView({
-          list: 5,
-          more: 1,
-        });
-      }
-      return () => {
-        window.removeEventListener('resize', resizeWindow);
-      };
+    setView();
   }, [width]);
 
   useEffect(() => {
@@ -58,11 +43,70 @@ function Movies({setPreloader, logged}) {
     }
   }, [searchParams, listView]);
 
+  function setView() {
+    window.addEventListener('resize', resizeWindow);
+      if (width >= 1280) {
+        setListView({
+          list: 12,
+          more: 3,
+        });
+      }
+      if (width < 1280 && width > 481) {
+        setListView({
+          list: 8,
+          more: 2,
+        });
+      }
+      if (width < 768 && width > 319) {
+        setListView({
+          list: 5,
+          more: 1,
+        });
+      }
+      return () => {
+        window.removeEventListener('resize', resizeWindow);
+      };
+  }
+
+  function search() {
+    setPreloader(false)
+    if (searchParams.key === '') {
+      setSearchError('Нужно ввести ключевое слово');
+    } else {
+      setSearchError('');
+      moviesApi.search(searchParams.key, searchParams.shortFilm);
+      const filtered = JSON.parse(localStorage.getItem('filtered'));
+      if (filtered.length === 0) {
+        setSearchError('Ничего не найдено');
+      }
+      setSearchParams({
+        ...searchParams,
+        filteredFilms: filtered,
+      });
+      setView();
+    }
+    setPreloader(true)
+  }
+
   function handleShort() {
-    setSearchParams({
-      ...searchParams,
-      shortFilm: !searchParams.shortFilm,
-    });
+    if (searchParams.filteredFilms.length !== 0) {
+      moviesApi.search(searchParams.key, !searchParams.shortFilm);
+      const filtered = JSON.parse(localStorage.getItem('filtered'));
+      if (filtered.length === 0) {
+        setSearchError('Ничего не найдено');
+      }
+      setSearchParams({
+        ...searchParams,
+        filteredFilms: filtered,
+        shortFilm: !searchParams.shortFilm,
+      });
+    }
+    else {
+      setSearchParams({
+        ...searchParams,
+        shortFilm: !searchParams.shortFilm,
+      });
+    }
   }
 
   function handleMoreFilms() {
@@ -85,22 +129,7 @@ function Movies({setPreloader, logged}) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    setPreloader(false)
-    if (searchParams.key === '') {
-      setSearchError('Нужно ввести ключевое слово');
-    } else {
-      setSearchError('');
-      moviesApi.search(searchParams.key, searchParams.shortFilm);
-      const filtered = JSON.parse(localStorage.getItem('filtered'));
-      if (filtered.length === 0) {
-        setSearchError('Ничего не найдено');
-      }
-      setSearchParams({
-        ...searchParams,
-        filteredFilms: filtered,
-      });
-    }
-    setPreloader(true)
+    search();
   }
 
     return (
