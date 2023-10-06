@@ -8,16 +8,19 @@ export default class FormValidation {
           this.disableSubmit()
       }
     }
+
     disableValidation() {
       this.inputList.forEach((input) => {
         input.removeEventListener('input', this.inputValidity);
       });
     }
+
     handleInputValidation() {
       this.inputList.forEach((input) => {
         input.addEventListener('input', this.inputValidity.bind(this));
       });
     }
+
     inputValidity(e) {
       const input = e.target;
       input.validity.valid ? this.hideError(input) : this.showError(input);
@@ -30,19 +33,23 @@ export default class FormValidation {
           this.disableSubmit()
       }
     }
-    showError(input) {
-      this.form.querySelector(`#${input.name}`).textContent =
-        input.validationMessage;
-    }
-    hideError(input) {
-      this.form.querySelector(`#${input.name}`).textContent = '';
-    }
+
     enableSubmit() {
       this.formSubmit.disabled = false;
       this.formSubmit.classList.remove('authform__submit_disable');
     }
+
     disableSubmit() {
       this.formSubmit.disabled = true;
       this.formSubmit.classList.add('authform__submit_disable');
+    }
+
+    showError(input) {
+      this.form.querySelector(`#${input.name}`).textContent =
+        input.validationMessage;
+    }
+    
+    hideError(input) {
+      this.form.querySelector(`#${input.name}`).textContent = '';
     }
   }

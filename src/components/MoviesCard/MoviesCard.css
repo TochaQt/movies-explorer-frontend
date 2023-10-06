@@ -1,13 +1,13 @@
 .moviescard {
     width: 360px;
     position: relative;
-    cursor: pointer;
 }
 
 .moviescard__img {
    width: 360px;
    height: 201px;
    border-radius: 6px;
+   cursor: pointer;
 }
 
 .moviescard__info {
@@ -27,6 +27,7 @@
     line-height: normal;
     margin: 0;
     padding: 0;
+    max-width: 250px;
 }
 
 .moviescard__duration {
@@ -81,7 +82,8 @@
     opacity: 1;
 }
 
-.moviescard:hover .moviescard__save_active {
+.moviescard__save_active_saved {
+    opacity: 0;
     background-image: url(../../images/d3.svg);
 }
 
@@ -122,5 +124,13 @@
 
     .moviescard__name {
         font-size: 12px;
+    }
+
+    .moviescard__save_active_saved {
+        opacity: 1;
+    }
+
+    .moviescard__save {
+        opacity: 1;
     }
 }

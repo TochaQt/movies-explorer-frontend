@@ -1,10 +1,10 @@
 import './Header.css'
 import Navigation from '../Navigation/Navigation';
 
-function Header() {
+function Header({logged}) {
     return(
         <header className="header">
-                <Navigation />
+                <Navigation logged={logged} />
         </header>
     )
 }

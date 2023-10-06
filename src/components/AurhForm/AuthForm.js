@@ -11,6 +11,8 @@ function AuthForm({
     submitText,
     formName,
     formTitle,
+    submit,
+    getValue,
   }) {
     useEffect(() => {
       const validation = new FormValidation();
@@ -18,9 +20,9 @@ function AuthForm({
       return () => {
         validation.disableValidation();
       };
-    });
+    }, [formName]);
     return (
-        <form className='authform' name={formName}>
+        <form className='authform' name={formName} onSubmit={submit}>
           <div className='authform__container'>
           <h1 className='authform__title'>{formTitle}</h1>
           {children}
@@ -32,6 +34,8 @@ function AuthForm({
             required 
             placeholder='example@mail.com'
             type='email'
+            pattern='.+@[A-Za-z]*\.[a-z]{2,4}'
+            onChange={getValue}
             ></input>
             <span id='email' className='authform__error'></span>
           </label>
@@ -45,11 +49,13 @@ function AuthForm({
               placeholder='*******'
               minLength="2"
               maxLength="40"
+              onChange={getValue}
             ></input>
             <span id='password' className='authform__error'></span>
           </label>
           </div>
           <div className='authform__container-submit'>
+          <span className='authform__submit-error'></span>
           <button className='authform__submit' type='submit'>{submitText}</button>
           <span className='authform__link'>
           {linkText}

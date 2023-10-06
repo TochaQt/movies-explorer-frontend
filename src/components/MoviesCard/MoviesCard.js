@@ -1,28 +1,95 @@
 import { useLocation } from 'react-router-dom';
 import React, {useState, useEffect} from "react";
+import api from '../../utils/MainApi';
 import './MoviesCard.css'
 
-function MoviesCard(props) {
-    const location = useLocation().pathname;
-    const [active, setActive] = useState(false);
+function MoviesCard({film, deletefilm}) {
+  const location = useLocation().pathname;
+  const [savedFilms, setSavedFilms] = useState(
+    JSON.parse(localStorage.getItem('savedMovies')) || []
+  );
+  const [savedMovie, setSavedMovie] = useState(false);
+  let image;
+  film._id
+    ? (image = film.image)
+    : (image = `https://api.nomoreparties.co/${film.image.url}`);
 
-    function handleLikeClick() {
-        if (active === false) {
-            setActive(true)
-        }
-        else {setActive(false)}
+  useEffect(() => {
+    savedFilms.find((movie) => movie.movieId === film.id) || film.owner
+      ? setSavedMovie(true)
+      : setSavedMovie(false);
+  }, [savedFilms, film]);
+
+function handleLikeClick() {
+    if (savedMovie) {
+      if (location === '/saved-movies') {
+      api
+        .deleteMovie(film)
+        .then((res) => {
+          if (res) {
+            setSavedMovie(!savedMovie);
+            deletefilm(film)
+          }
+        })
+        .catch((err) => console.log(err));
+      }
+      else {
+        const movieToRemove = savedFilms.find((savedMovie) => film.id === savedMovie.movieId)
+        api
+        .deleteMovie(movieToRemove)
+        .then((res) => {
+          if (res) {
+            setSavedMovie(!savedMovie);
+          }
+        })
+        .then(() =>
+        api.getSavedMovies()
+          .then((res) => {
+            localStorage.setItem('savedMovies', JSON.stringify(res));
+            setSavedFilms(res)
+          })
+      )
+        .catch((err) => console.log(err));
+      }
+    } else {
+      api
+        .saveMovie(film)
+        .then((res) => {
+          if (res) {
+            setSavedMovie(!savedMovie);
+          }
+        })
+        .then(() =>
+          api.getSavedMovies()
+            .then((res) => {
+              localStorage.setItem('savedMovies', JSON.stringify(res));
+              setSavedFilms(res)
+            })
+        )
+        .catch((err) => console.log(err));
     }
+}
 
-    return (
-        <div className="moviescard" onClick={handleLikeClick}>
-            <img src={props.movieImg} alt={`Обложка "${props.movieName}"`} className="moviescard__img"></img>
-            <div className="moviescard__info">
-                <p className="moviescard__name">{props.movieName}</p>
-                <p className="moviescard__duration">{props.movieDuration}</p>
-            </div>
-            <button type='button' className={`moviescard__save ${active === true ? 'moviescard__save_active' : ''}`}></button>
+function handleTrailerClick() {
+    window.open(film.trailerLink, '_blank');
+}
+
+function calcDuration() {
+    const h = Math.round(film.duration / 60);
+    const m = film.duration % 60;
+    return `${h ? `${h} ч` : ''} ${m} м`;
+}
+
+return (
+    <div className="moviescard" >
+        <img src={image} alt={`Обложка "${film.nameRU}"`} className="moviescard__img" onClick={handleTrailerClick} ></img>
+        <div className="moviescard__info">
+            <p className="moviescard__name">{film.nameRU}</p>
+            <p className="moviescard__duration">{calcDuration()}</p>
         </div>
-    )
+        <button type='button' onClick={handleLikeClick} className={`moviescard__save ${location==='/saved-movies' ? 'moviescard__save_active_saved' : ''} ${savedMovie === true ? 'moviescard__save_active' : ''}` }></button>
+    </div>
+)
 }
 
 export default MoviesCard;

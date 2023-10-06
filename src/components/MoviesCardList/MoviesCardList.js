@@ -1,27 +1,20 @@
 import './MoviesCardList.css'
 import MoviesCard from '../MoviesCard/MoviesCard';
-import movieImg from '../../images/color.jpg'
 
-function MoviesCardList() {
+function MoviesCardList({movies, handleMoreFilms, listView, filteredFilms, deletefilm}) {
     return (
         <section className="moviescardlist">
             <ul className='moviescardlist__container'>
-                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
-                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
-                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
-                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
-                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
-                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
-                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
-                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
-                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
-                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
-                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
-                <li className='moviescardlist__li'><MoviesCard movieName='33 слова о дизайне' movieDuration='1ч 17м' movieImg={movieImg} /></li>
+            {movies.map((film) => {
+            return (<li key={film.id || film._id} className='moviescardlist__li'><MoviesCard film={film} deletefilm={deletefilm}/></li>)})}
             </ul>
-            <button type='button' className='moviescardlist__button'>Еще</button>
+            {listView < filteredFilms ? (
+                <button type='button' className='moviescardlist__button' onClick={handleMoreFilms}>Еще</button>
+          ) : null}
         </section>
     )
 }
 
 export default MoviesCardList;
+
+

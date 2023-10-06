@@ -21,6 +21,9 @@
 @media screen and (max-width: 460px) {
     .register {
         width: calc(100vw - 60px);
+    }
+
+    .register__section {
         display: flex;
         flex-direction: column;
         align-items: center;
